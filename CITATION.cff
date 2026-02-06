@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: "Novella"
+    given-names: "Adrià"
+    orcid: "https://orcid.org/0009-0002-7488-7719"
+  - family-names: "Iglesias"
+    given-names: "Aidar"
+title: "FablessFour"
+version: 0
+date-released: 2026-02-06
+repository-code: "https://github.com/Bubi2001/FablessV"
+license: MIT
+keywords:
+  - "SystemVerilog"
+  - "RTL"
+  - "FPGA"
+  - "ASIC"
+  - "RISC-V"
+  - "SoC"
+  - "open-source hardware"
+  - "Analog"
+  - "RF"
