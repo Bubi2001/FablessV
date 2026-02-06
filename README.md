@@ -71,6 +71,19 @@ docker-compose up -d
 docker exec -it fabless_v_lab bash
 ```
 
+Inside the Lab use the "Swiss Army Knife" (SAK) to select the PDK to use
+
+```bash
+# Set the PDK to Google SkyWater 130nm
+sak-pdk sky130A
+
+# Set the PDK to GlobalFoundries 180nm MCU
+sak-pdk gf180mcuD
+
+# Set the PDK to IHP SG13G2
+sak-pdk ihp-sg13g2
+```
+
 ## The Toolchain
 
 We stand on the shoulders of giants. Our stack includes:
