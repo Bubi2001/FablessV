@@ -19,7 +19,7 @@ FablessV/
 │   ├── 01_digital_riscv/     # [ASIC 1] RTL, OpenLane Configs, Firmware
 │   ├── 02_analog_bgr/        # [ASIC 2] Xschem Schematics, Magic Layouts, CACE Specs
 │   ├── 03_mixed_dpll/        # [ASIC 3] Co-simulation bridges (Ngspice <-> Verilog)
-│   ├── 04_rf_vna/            # [ASIC 4] OpenEMS Scripts, QucS-S Projects, GDSII
+│   ├── 04_rf/                # [ASIC 4] OpenEMS Scripts, QucS-S Projects, GDSII
 │   └── 05_photonics_onoc/    # [ASIC 5] GDSFactory Scripts, Meep FDTD, Sax Sim
 ├── tools/                    # External Tool Scripts (OpenFASoC, IHP Extras, SiEPIC)
 ├── common/                   # Shared Python/Octave Models & Verilog Libs
