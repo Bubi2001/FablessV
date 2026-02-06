@@ -1,0 +1,30 @@
+services:
+  chip-lab:
+    # The Swiss Army Knife Image (contains 90% of your tools)
+    image: hpretl/iic-osic-tools:latest
+    container_name: fabless_v_lab
+    hostname: chip-design-station
+
+    # Enable GUI display on Windows
+    environment:
+      - DISPLAY=$DISPLAY
+      - LIB_GL_ALWAYS_INDIRECT=1
+      - PDK_ROOT=/foss/pdks
+
+    # Map folders so data persists after you close Docker
+    volumes:
+      # Map your designs folder
+      - ./designs:/foss/designs
+      # Map the 'tools' folder for custom scripts (Volker's, OpenFASoC)
+      - ./tools:/foss/tools/extra
+      # Map X11 socket for GUI
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      # (Optional) Persist PDKs so you don't re-download them every time
+#      - ./artifacts/pdk:/foss/pdks
+
+    # Interactive mode
+    stdin_open: true
+    tty: true
+
+    # Networking for potential license servers or web views
+    network_mode: host
