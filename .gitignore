@@ -1,0 +1,112 @@
+# ----------------------------------------------------------------------
+# 1. GENERAL & OS
+# ----------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+*~
+*.swp
+*.swo
+*.tmp
+*.log
+.vscode/
+.idea/
+
+# ----------------------------------------------------------------------
+# 2. DOCKER & ENVIRONMENT
+# ----------------------------------------------------------------------
+# Do not commit local overrides or environment secrets
+docker-compose.override.yml
+.env
+
+# ----------------------------------------------------------------------
+# 3. TOOLS & DEPENDENCIES
+# ----------------------------------------------------------------------
+# We ignore the contents of tools/ because they should be populated 
+# by your setup_env.sh script or git submodules.
+tools/*
+!tools/.gitkeep
+
+# Python Environments
+__pycache__/
+*.pyc
+.venv/
+env/
+dist/
+build/
+*.egg-info/
+
+# ----------------------------------------------------------------------
+# 4. DIGITAL FLOW (OpenLane / Verilator)
+# ----------------------------------------------------------------------
+# OpenLane creates massive 'runs' directories with logs and reports
+designs/digital/**/runs/
+designs/digital/**/sim/
+
+# Verilator build directories
+obj_dir/
+
+# Intermediate build files (Generated from Source)
+*.lef
+*.def
+*.spi
+*.nl
+
+# Note: We usually IGNORE GDSII because it is a binary output.
+# We commit the source (Verilog/Config) or Layout Source (.mag).
+*.gds
+
+# ----------------------------------------------------------------------
+# 5. ANALOG FLOW (Xschem / Magic / Ngspice)
+# ----------------------------------------------------------------------
+# Xschem simulation/netlist files
+*.sim
+*.spice
+# Note: Keep .sch and .sym files (Source)
+
+# Ngspice raw data (Waveforms)
+*.raw
+*.fft
+*.data
+*.out
+
+# Magic generation
+*.ext
+*.nodes
+# Note: Keep .mag files (Layout Source)
+
+# LVS/DRC Reports
+*.lvs.report
+*.drc.report
+feedback.txt
+
+# ----------------------------------------------------------------------
+# 6. RF FLOW (Qucs-S / OpenEMS / IHP)
+# ----------------------------------------------------------------------
+# Qucs-S project data
+*_prj/
+*.dat
+*.dpl
+*.m 
+# Note: Keep .sch (Schematic) and .json (Metadata)
+
+# OpenEMS Mesh and Dump files (These are HUGE - Gigabytes)
+CSX/
+tmp/
+*.h5
+*.vtk
+*.vti
+
+# S-Parameters (Touchstone files)
+# Rule: Ignore generated results. 
+# If you need a "Golden" reference file for CI, force add it (git add -f)
+*.s2p
+*.s1p
+*.snp
+
+# ----------------------------------------------------------------------
+# 7. ARTIFACTS
+# ----------------------------------------------------------------------
+# Ignore standard PDK installation paths if they exist locally
+artifacts/
+pdks/
+pdk/
